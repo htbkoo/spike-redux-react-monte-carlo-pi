@@ -1,3 +1,5 @@
+import range from 'lodash/range';
+
 import {generateCoordinates, isInCircle} from "./coordinatesGenerator";
 
 describe("coordinatesGenerator", function () {
@@ -32,5 +34,15 @@ describe("coordinatesGenerator", function () {
 
         // then
         expect(inCircle).toEqual(false);
+    });
+
+    it("should estimate pi", () => {
+        // const COUNT = 10, BATCH = 10;
+        // const COUNT = 1000000, BATCH = 10;
+        const COUNT = 10000000, BATCH = 10;
+        const inCounts = range(COUNT).filter(() => isInCircle({coordinates: generateCoordinates()})).length;
+        const estimatedPI = 4 * inCounts / COUNT;
+        const error = (Math.abs(Math.PI - estimatedPI) / Math.PI) * 100;
+        console.log(`COUNT: ${COUNT}, inCounts: ${inCounts}, estimated PI: ${estimatedPI}, error: ${error}%`);
     });
 });
