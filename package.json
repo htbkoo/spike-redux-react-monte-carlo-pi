@@ -8,6 +8,7 @@
     "@types/node": "12.0.2",
     "@types/react": "16.8.18",
     "@types/react-dom": "16.8.4",
+    "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.2.0",
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.149",
     "move-cli": "^1.2.1",
     "rimraf": "^2.6.3"
   }
