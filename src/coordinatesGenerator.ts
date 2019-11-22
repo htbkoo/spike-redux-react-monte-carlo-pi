@@ -3,7 +3,7 @@ interface MyCoordinates {
     y: number
 }
 
-export function generateCoordinates({random = Math.random}: { random: () => number }): MyCoordinates {
+export function generateCoordinates({random = Math.random}: Partial<{ random: () => number }> = {}): MyCoordinates {
     return {
         x: random(),
         y: random(),
