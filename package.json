@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "move-cli": "^1.2.1",
     "rimraf": "^2.6.3"
   }
