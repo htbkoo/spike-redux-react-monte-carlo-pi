@@ -16,7 +16,8 @@
   "scripts": {
     "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env CI=true react-scripts test",
+    "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
     "gh-pages:clean": "npx rimraf docs",
     "gh-pages:rename": "npx move-cli build docs",
