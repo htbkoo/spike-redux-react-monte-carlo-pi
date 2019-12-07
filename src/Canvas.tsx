@@ -16,12 +16,14 @@ export default function Canvas() {
                     type: 'scatter',
                     mode: 'markers',
                     marker: {color: 'blue'},
+                    name: "inside",
                 },
                 {
                     ...asPlotData(outside),
                     type: 'scatter',
                     mode: 'markers',
                     marker: {color: 'red'},
+                    name: "outside",
                 },
             ]}
             layout={{
