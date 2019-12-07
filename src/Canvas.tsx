@@ -45,12 +45,8 @@ export default function Canvas() {
                         }
                     },
                 ],
-                "xaxis.range": [0, 1],
-                "yaxis.range": [0, 0.1],
                 "xaxis": {"fixedrange": true, rangemode: "nonnegative"},
                 "yaxis": {"fixedrange": true, rangemode: "nonnegative"},
-                "xaxis.autorange": false,
-                "yaxis.autorange": false,
             }}
         />
     );
