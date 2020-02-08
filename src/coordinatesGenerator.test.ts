@@ -1,6 +1,6 @@
 import range from 'lodash/range';
 
-import {generateCoordinates, isInCircle} from "./coordinatesGenerator";
+import {generateCoordinates, generateListOfCoordinates, isInCircle} from "./coordinatesGenerator";
 
 describe("coordinatesGenerator", function () {
     describe("generateCoordinates", () => {
@@ -21,6 +21,24 @@ describe("coordinatesGenerator", function () {
                 x: 0.991802431776998,
                 y: 0.6724734436367914,
             })
+        });
+    });
+
+    describe("generateListOfCoordinates", () => {
+        it("should generate list of coordinates", () => {
+            // given
+            const count = 1000, coordinate = 0;
+            const mockRandomFunc = () => coordinate;
+
+            // when
+            const data = generateListOfCoordinates({random: mockRandomFunc, count});
+
+            // then
+            expect(data.length).toEqual(count);
+
+            data.forEach(coordinates =>
+                expect(coordinates).toEqual({x: coordinate, y: coordinate,})
+            );
         });
     });
 
