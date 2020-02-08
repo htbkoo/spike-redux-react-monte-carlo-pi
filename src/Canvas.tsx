@@ -1,9 +1,8 @@
 import React from 'react';
-import range from 'lodash/range';
 import groupBy from 'lodash/groupBy';
 
 import Plot from 'react-plotly.js';
-import {generateCoordinates, isInCircle, MyCoordinates} from "./coordinatesGenerator";
+import {generateListOfCoordinates, isInCircle, MyCoordinates} from "./coordinatesGenerator";
 
 export default function Canvas() {
     const {inside, outside} = generateData({count: 1000});
@@ -52,7 +51,7 @@ export default function Canvas() {
     );
 
     function generateData({count}: { count: number }): { inside: MyCoordinates[], outside: MyCoordinates[] } {
-        const coordinatesPairs = range(count).map(() => generateCoordinates());
+        const coordinatesPairs = generateListOfCoordinates({count});
         const {true: inside, false: outside} = groupBy(coordinatesPairs, coordinates => isInCircle({coordinates}));
 
         return {inside, outside};
