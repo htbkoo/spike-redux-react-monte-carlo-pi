@@ -10,20 +10,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import './App.css';
 
 import Canvas from "./Canvas";
+import AppTitleBar from "./AppTitleBar";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
-        },
-        appBar: {
-            zIndex: theme.zIndex.drawer + 1,
-        },
-        menuButton: {
-            marginRight: theme.spacing(2),
-            [theme.breakpoints.up('sm')]: {
-                display: 'none',
-            },
         },
         content: {
             flexGrow: 1,
@@ -46,22 +38,7 @@ const App: React.FC = () => {
             <div className={classes.root}>
                 <CssBaseline />
 
-                <AppBar position="fixed" className={classes.appBar}>
-                    <Toolbar>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="start"
-                            onClick={handleDrawerToggle}
-                            className={classes.menuButton}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" noWrap>
-                            Monte Carlo Pi
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
+                <AppTitleBar handleDrawerToggle={handleDrawerToggle} />
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
