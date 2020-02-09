@@ -20,6 +20,8 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+const canvas = (<Canvas />); // to avoid re-rendering due to state change
+
 const App: React.FC = () => {
     const classes = useStyles();
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -37,7 +39,7 @@ const App: React.FC = () => {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Canvas />
+                    {canvas}
                 </main>
             </div>
         </div>
